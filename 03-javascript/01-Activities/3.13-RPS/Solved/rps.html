@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+    var computerChoices = ["r", "p", "s"];
+
+    // This function is run whenever the user presses a key.
+    var findWinner = function (event) {
+      // Determines which key was pressed.
+      var userGuess = event.key;
+      // Computer guess is randomly choosen from the array.
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+      //this will hold our winner value - "Player", "Computer" or "Nobody" (in the event of a tie)
+      var winner;
+      var render = function(){
+        document.write("You chose " + userGuess + "<br />" + "The computer chose " + computerGuess + "<br />" + winner + " wins!");
+      }
+
+      //Write the logic here to determine who won and set the winner variable accordingly
+      if (userGuess === "r" && computerGuess === "s") {
+        winner = "Player";
+      }
+      else if (userGuess === "p" && computerGuess === "r") {
+        winner = "Player";
+      }
+      else if (userGuess === "s" && computerGuess === "p") {
+        winner = "Player";
+      }
+      else if (userGuess === computerGuess) {
+        winner = "Nobody";
+      }
+      else {
+        winner = "Computer"
+      }
+
+      render();
+    }
+
+    document.addEventListener("keyup", findWinner);
+  </script>
+</body>
+
+</html>

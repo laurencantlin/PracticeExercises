@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Name:
+    <span id="name"></span>
+  </h1>
+  <h2>Favorite Color:
+    <span id="color"></span>
+  </h2>
+  <h2>Favorite Season:
+    <span id="season"></span>
+  </h2>
+  <h2>Interests:</h2>
+  <ul id="interests">
+  </ul>
+
+  <script>
+    // Prompt the user for some information
+    var name = prompt("What is your name?");
+    var color = prompt("What is your favorite color?");
+    var season = prompt("What is your favorite season?");
+    var interests = prompt("What are you interested in?\nSeperate interests with a comma.\ne.g. hiking, fishing golf, etc.");
+
+    // Split is a built-in method that turns a string into an array of smaller strings, splitting them by a specified seperator (", in this case")
+    interests = interests.split(",");
+
+    // 1. Get references to the #name, #color, #season, and #interests elements
+
+    // 2. Set the `innerText` of the #name, #color, and #season elements to their corresponding collected values
+
+    // 3. Use a for-loop and the `innerText` property to create a string of li tags containing each collected intererst
+    // Insert the string of interest li tags inside of the #interests element
+  </script>
+</body>
+
+</html>

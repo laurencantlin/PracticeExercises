@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var myFunction = function (event) {
+		var key = event.key;
+
+		if (key === "r") {
+			document.write("You pressed R");
+		}
+		else {
+			document.write("You pressed the wrong button");
+		}
+	}
+	
+	document.addEventListener("keyup", myFunction);
+</script>
+</body>
+</html>

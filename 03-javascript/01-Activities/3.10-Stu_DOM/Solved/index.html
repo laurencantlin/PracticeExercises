@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Name: <span id="name"></span></h1>
+  <h2>Favorite Color: <span id="color"></span></h2>
+  <h2>Favorite Season: <span id="season"></span></h2>
+  <h2>Interests:</h2>
+  <ul id="interests">
+  </ul>
+
+  <script>
+    // Prompt the user for some information
+    var name = prompt("What is your name?");
+    var color = prompt("What is your favorite color?");
+    var season = prompt("What is your favorite season?");
+    var interests = prompt("What are you interested in?\nSeperate interests with a comma.\ne.g. hiking, fishing golf, etc.");
+
+    // Split is a built-in method that turns a string into an array of smaller strings, splitting them by a specified seperator (", in this case")
+    interests = interests.split(",");
+
+    // Getting references to the DOM elements we'll need
+    var nameSpan = document.querySelector("#name");
+    var colorSpan = document.querySelector("#color");
+    var seasonSpan = document.querySelector("#season")
+    var interestUL = document.querySelector("#interests");
+
+
+    // Setting the innerText of the name, color and season span elements
+    nameSpan.innerText = name;
+    colorSpan.innerText = color;
+    seasonSpan.innerText = season;
+
+    // Creating a string to hold the HTML we'll insert into the list
+    var interestHTML = "";
+
+    // Loop over the array of interests, add an li element containing the interest to the interestHTML string
+    for (var i = 0; i < interests.length; i++) {
+      var interest = interests[i];
+      interestHTML += "<li>" + interest + "</li>";
+    }
+
+    // Set the inner HTML of the interestUL to the interestHTML string
+    interestUL.innerHTML = interestHTML;
+  </script>
+</body>
+
+</html>
